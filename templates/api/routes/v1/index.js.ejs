@@ -15,7 +15,10 @@ const router = express.Router();
 
 router.get('/health', controller.health);
 
+<% if (appId === true) { -%>
 router.get('/protected', authorize, controller.protected);
+<% } -%>
+router.get('/public', controller.public);
 
 router.post('/objects', validator.validate("post", "/objects"), controller.post);
 

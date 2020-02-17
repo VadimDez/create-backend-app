@@ -18,6 +18,20 @@ paths:
                 properties:
                   status:
                     type: string
+  /public:
+    get:
+      summary: get public data
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+  <% if (appId === true) { -%>
   /protected:
     get:
       summary: get protected data
@@ -34,6 +48,7 @@ paths:
                     type: string
         "401":
           description: Unauthorized
+  <% } -%>
   /objects:
     post:
       summary: persist object

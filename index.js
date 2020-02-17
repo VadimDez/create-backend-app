@@ -5,96 +5,105 @@ const fs = require("fs");
 const colors = require("colors");
 const path = require("path");
 const inquirer = require("inquirer");
-const ejs = require("ejs");
-const util = require("util");
 
-const questions = [
-  {
-    name: "name",
-    type: "input",
-    message: "Insert name of the project?"
-  }
+
+const {
+  createFolderStructure,
+  loadTemplate
+} = require("./utils");
+
+const questions = [{
+  name: "name",
+  type: "input",
+  message: "Insert name of the project?"
+},
+{
+  name: "appId",
+  type: "confirm",
+  message: "Would you like to use AppID?",
+  default: true
+}
 ];
 
-function loadTemplate(name) {
-  let contents = fs.readFileSync(
-    path.join(__dirname, "templates", name + ".ejs"),
-    "utf-8"
-  );
-  let locals = Object.create(null);
+function copyTemplates(appDirectory, answers) {
+  const templateFiles = [
+    ".env.example",
+    [".env.example", ".env"],
+    ["config/express.js.ejs", "config/express.js"],
+    ["package.json.ejs", "package.json"],
+    ["config/vars.js.ejs", "config/vars.js"],
+    ["api/routes/v1/index.js.ejs", "api/routes/v1/index.js"],
+    ["api/controllers/main.controller.js.ejs", "api/controllers/main.controller.js"],
+    ["swagger/swagger.yaml.ejs", "swagger/swagger.yaml"],
+    ["tests/integration/test.spec.js.ejs", "tests/integration/test.spec.js"]
+  ];
 
-  function render() {
-    console.log(locals);
+  for (let file of templateFiles) {
+    let destination;
 
-    return ejs.render(contents, locals, {
-      escape: util.inspect
+    if (Array.isArray(file)) {
+      destination = file[1];
+      file = file[0];
+    }
+    let template = loadTemplate(file);
+
+    Object.keys(answers).forEach(key => {
+      template.locals[key] = answers[key];
     });
-  }
 
-  return {
-    locals: locals,
-    render: render
-  };
+    createFolderStructure(appDirectory, file);
+
+    fs.writeFileSync(
+      path.join(appDirectory, destination || file),
+      template.render()
+    );
+  }
 }
 
-const run = async () => {
-  const answers = await inquirer.prompt(questions);
-  console.log(answers);
-
-  const appDirectory = `${process.cwd()}/${answers.name}`;
-  // let indexTemplate = loadTemplate("index");
-
-  // Object.keys(answers).forEach(key => {
-  //   indexTemplate.locals[key] = answers[key];
-  // });
-
-  fs.mkdirSync(appDirectory);
-  // fs.writeFileSync(path.join(appDirectory, "index.js"), indexTemplate.render());
-
+function simpleCopy(appDirectory, answers) {
   const filesToCopy = [
-    "api/controllers/main.controller.js",
-    "api/middlewares/auth.js",
-    "api/v1/index.js",
-    "config/exmpress.js",
-    "config/passport.js",
-    "config/vars.js",
     "config/winston.js",
     "swagger/swagger.js",
-    "swagger/swagger.yaml",
-    "test/integration/test.spec.js",
-    "test/unit/example.spec.js",
-    ".env.example",
+    "tests/unit/example.spec.js",
     ".gitignore",
     ".pipeline",
     "build.sh",
-    "ci-cd-pipeline.md",
+    "cicd-pipeline.md",
     "deployment.example.yml",
     "Dockerfile",
     "index.js",
     "jest-integration-config.json",
     "jest-unit-config.json",
     "manifest.yml",
-    "package.json",
     "README.md",
     "run.sh",
     "secrets.example.yml"
   ];
 
-  for (let file of filesToCopy) {
-    const filePath = file.split("/");
+  if (answers.appId) {
+    filesToCopy.push("config/passport.js");
+    filesToCopy.push("api/middlewares/auth.js");
+  }
 
-    let dir = appDirectory;
-    while (filePath.length > 1) {
-      dir += `/${filePath.shift()}`;
-      fs.mkdirSync(dir);
-    }
+  for (let file of filesToCopy) {
+    createFolderStructure(appDirectory, file);
 
     fs.copyFileSync(
       path.join(__dirname, "templates", file),
       path.join(appDirectory, file)
     );
   }
+}
 
-  console.log(`${answers.name} created!`);
+const run = async () => {
+  const answers = await inquirer.prompt(questions);
+
+  const appDirectory = `${process.cwd()}/${answers.name}`;
+  fs.mkdirSync(appDirectory);
+
+  copyTemplates(appDirectory, answers);
+  simpleCopy(appDirectory, answers);
+
+  console.log(`${answers.name} created!`.green);
 };
 run();
