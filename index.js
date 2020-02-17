@@ -35,7 +35,8 @@ function copyTemplates(appDirectory, answers) {
     ["api/routes/v1/index.js.ejs", "api/routes/v1/index.js"],
     ["api/controllers/main.controller.js.ejs", "api/controllers/main.controller.js"],
     ["swagger/swagger.yaml.ejs", "swagger/swagger.yaml"],
-    ["tests/integration/test.spec.js.ejs", "tests/integration/test.spec.js"]
+    ["tests/integration/test.spec.js.ejs", "tests/integration/test.spec.js"],
+    [".gitignore.ejs", ".gitignore"],
   ];
 
   for (let file of templateFiles) {
@@ -65,7 +66,6 @@ function simpleCopy(appDirectory, answers) {
     "config/winston.js",
     "swagger/swagger.js",
     "tests/unit/example.spec.js",
-    ".gitignore",
     ".pipeline",
     "build.sh",
     "cicd-pipeline.md",
