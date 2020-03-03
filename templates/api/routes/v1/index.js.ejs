@@ -3,9 +3,11 @@
  */
 const express = require('express');
 
+<% if (appId === true) { -%>
 const {
   authorize
 } = require("../../middlewares/auth");
+<% } -%>
 const controller = require('../../controllers/main.controller');
 const {
   validator
