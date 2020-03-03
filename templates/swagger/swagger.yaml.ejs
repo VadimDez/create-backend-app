@@ -44,7 +44,7 @@ paths:
                   type: string
               required:
                 - name
-  <% if (appId === true) { -%>
+<% if (appId === true) { -%>
   /protected:
     get:
       summary: get protected data
@@ -61,4 +61,4 @@ paths:
                     type: string
         "401":
           description: Unauthorized
-  <% } -%>
+<% } -%>
