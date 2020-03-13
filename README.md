@@ -10,8 +10,9 @@ npx create-backend-app
 
 ## Supports
 
-- Express
+- [Express](https://expressjs.com/)
 - [IBM AppID](https://www.ibm.com/cloud/app-id)
+- [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 
 ## License
 
