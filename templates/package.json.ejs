@@ -45,6 +45,9 @@
     ,"ibmcloud-appid": "^6.1.0",
     "passport": "^0.4.1"
     <% } -%>
+    <% if (cloudant === true) { -%>
+    ,"@cloudant/cloudant": "^4.2.4"
+    <% } -%>
   },
   "devDependencies": {
     "cross-env": "^7.0.0",

@@ -22,6 +22,12 @@ const questions = [{
   type: "confirm",
   message: "Would you like to use AppID?",
   default: true
+},
+{
+  name: "cloudant",
+  type: "confirm",
+  message: "Would you like to use CloudantDB?",
+  default: false
 }
 ];
 
@@ -29,6 +35,7 @@ function copyTemplates(appDirectory, answers) {
   const templateFiles = [
     ".env.example",
     [".env.example", ".env"],
+    ["config/cloudant.js"],
     ["config/express.js.ejs", "config/express.js"],
     ["package.json.ejs", "package.json"],
     ["config/vars.js.ejs", "config/vars.js"],

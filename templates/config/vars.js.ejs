@@ -22,6 +22,12 @@ module.exports = {
     OAUTH_SERVER_URL: process.env.APP_ID_OAUTH_SERVER_URL,
       TENTANT_ID: process.env.APP_ID_TENTANT_ID,
         CLIENT_ID: process.env.APP_ID_CLIENT_ID
+  },
+  <% } -%>
+  <% if (cloudant === true) { -%>
+  CLOUDANT: {
+    API_KEY: process.env.CLOUDANT_API_KEY,
+    URL: process.env.CLOUDANT_URL
   }
   <% } -%>
 };
