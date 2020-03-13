@@ -25,6 +25,9 @@ const APP_ID_STRATEGY = require('./passport').APP_ID_STRATEGY;
 const {
 swaggerDocument
 } = require('../swagger/swagger');
+<% if (cloudant === true) { -%>
+require("./cloudant");
+<% } -%>
 
 const app = express();
 
