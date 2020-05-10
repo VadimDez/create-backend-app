@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "ejs": "^3.0.1",
+    "ejs": "^3.0.2",
     "inquirer": "^7.0.4",
     "shelljs": "^0.8.3"
   },
