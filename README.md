@@ -8,6 +8,8 @@
 npx create-backend-app
 ```
 
+![img](https://user-images.githubusercontent.com/3748453/95793526-0fadec80-0ce6-11eb-8b34-052d87888e92.jpg)
+
 ## Supports
 
 - [Express](https://expressjs.com/)
