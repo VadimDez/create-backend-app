@@ -12,6 +12,8 @@ spec:
       labels:
         app: backend-starter
     spec:
+      securityContext:
+        runAsNonRoot: true
       containers:
         - name: backend-starter
           image: de.icr.io/default/backend-starter:latest
