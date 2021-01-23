@@ -12,23 +12,24 @@ const {
   loadTemplate
 } = require("./utils");
 
-const questions = [{
-  name: "name",
-  type: "input",
-  message: "Insert name of the project?"
-},
-{
-  name: "appId",
-  type: "confirm",
-  message: "Would you like to use AppID?",
-  default: true
-},
-{
-  name: "cloudant",
-  type: "confirm",
-  message: "Would you like to use CloudantDB?",
-  default: false
-}
+const questions = [
+  {
+    name: "name",
+    type: "input",
+    message: "Insert name of the project?"
+  },
+  {
+    name: "appId",
+    type: "confirm",
+    message: "Would you like to use AppID?",
+    default: true
+  },
+  {
+    name: "cloudant",
+    type: "confirm",
+    message: "Would you like to use CloudantDB?",
+    default: false
+  }
 ];
 
 function copyTemplates(appDirectory, answers) {
