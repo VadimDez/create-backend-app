@@ -36,7 +36,6 @@ function copyTemplates(appDirectory, answers) {
   const templateFiles = [
     ".env.example",
     [".env.example", ".env"],
-    ["config/cloudant.js"],
     ["config/express.js.ejs", "config/express.js"],
     ["package.json.ejs", "package.json"],
     ["config/vars.js.ejs", "config/vars.js"],
@@ -46,6 +45,10 @@ function copyTemplates(appDirectory, answers) {
     ["tests/integration/test.spec.js.ejs", "tests/integration/test.spec.js"],
     [".gitignore.ejs", ".gitignore"],
   ];
+
+  if (answers.cloudant) {
+    templateFiles.push(["config/cloudant.js"]);
+  }
 
   for (let file of templateFiles) {
     let destination;
