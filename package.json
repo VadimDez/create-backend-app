@@ -1,7 +1,7 @@
 {
   "name": "create-backend-app",
-  "version": "0.0.7",
-  "description": "",
+  "version": "0.0.8",
+  "description": "Create Backend App",
   "main": "index.js",
   "bin": {
     "create-backend-app": "./index.js"
