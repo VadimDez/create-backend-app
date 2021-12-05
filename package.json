@@ -30,7 +30,7 @@
     "snyk": "^1.752.0"
   },
   "engines": {
-    "node": ">= 10"
+    "node": ">= 14"
   },
   "snyk": true
 }
