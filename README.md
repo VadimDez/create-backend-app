@@ -13,7 +13,6 @@ npx create-backend-app
 ## Supports
 
 - [Express](https://expressjs.com/)
-- Express
 - Swagger, Swagger UI and Swagger Request Validation
 - Nodemon
 - Jest
