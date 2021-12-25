@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - [[#155](https://github.com/VadimDez/create-backend-app/pull/155)] - Update express-openapi-validate dependency to ~0.6.0
+- [[#157](https://github.com/VadimDez/create-backend-app/pull/157)] - Update inquirer to 8.2.0
 
 ### Breaking changes
 
