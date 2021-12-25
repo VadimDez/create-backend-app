@@ -2,9 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.1]
+## [1.0.0]
+
+### Changed
 
 - [[#155](https://github.com/VadimDez/create-backend-app/pull/155)] - Update express-openapi-validate dependency to ~0.6.0
+
+### Breaking changes
+
+- [[#156](https://github.com/VadimDez/create-backend-app/pull/156)] - Update node to 14.x
 
 ## [0.1.0]
 
