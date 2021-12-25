@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file.
 - [[#155](https://github.com/VadimDez/create-backend-app/pull/155)] - Update express-openapi-validate dependency to ~0.6.0
 - [[#157](https://github.com/VadimDez/create-backend-app/pull/157)] - Update inquirer to 8.2.0
 
+### Fixes
+
+- [[#158](https://github.com/VadimDez/create-backend-app/pull/158)] - Fix kube port
+
 ### Breaking changes
 
 - [[#156](https://github.com/VadimDez/create-backend-app/pull/156)] - Update node to 14.x
