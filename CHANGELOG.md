@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1]
+
+- [[#159](https://github.com/VadimDez/create-backend-app/pull/159)] - Update express to 4.17.2
+
 ## [1.0.0]
 
 ### Changed
