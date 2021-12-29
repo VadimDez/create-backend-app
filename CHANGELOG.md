@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [1.0.1]
 
 - [[#159](https://github.com/VadimDez/create-backend-app/pull/159)] - Update express to 4.17.2
+- [[#160](https://github.com/VadimDez/create-backend-app/pull/160)] - Update swagger-ui-express from 4.1.6 to 4.2.0
 
 ## [1.0.0]
 
