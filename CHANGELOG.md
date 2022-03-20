@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [1.0.2] - 20-03-2022
 
 - [[#163](https://github.com/VadimDez/create-backend-app/pull/163)] - build(deps): bump shelljs from 0.8.4 to 0.8.5
 - [[#175](https://github.com/VadimDez/create-backend-app/pull/175)] - Bump winston to 3.3.4
