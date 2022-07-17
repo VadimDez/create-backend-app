@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+- [[#195](https://github.com/VadimDez/create-backend-app/pull/195)] - Security upgrade nodemon from 2.0.15 to 2.0.17
+
 ## [1.0.2] - 20-03-2022
 
 - [[#163](https://github.com/VadimDez/create-backend-app/pull/163)] - build(deps): bump shelljs from 0.8.4 to 0.8.5

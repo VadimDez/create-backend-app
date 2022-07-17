@@ -24,8 +24,8 @@
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
-    "ejs": "^3.1.7",
-    "inquirer": "~8.2.2",
+    "ejs": "^3.1.8",
+    "inquirer": "~8.2.4",
     "shelljs": "^0.8.5",
     "snyk": "^1.908.0"
   },
