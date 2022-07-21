@@ -16,6 +16,7 @@ describe("sample integration tests", () => {
       });
   });
 
+  <% if (appId === true) { -%>
   it("should return 200 when accessing protected route with no auth header (only for test env)", (done) => {
     return request(app)
       .get("/api/v1/protected")
@@ -24,6 +25,7 @@ describe("sample integration tests", () => {
         done();
       });
   });
+  <% } -%>
 
   describe("Validation", () => {
     it("should return validation error", (done) => {
