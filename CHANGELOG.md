@@ -2,9 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [1.0.3] - 21-07-2022
 
 - [[#195](https://github.com/VadimDez/create-backend-app/pull/195)] - Security upgrade nodemon from 2.0.15 to 2.0.17
+- [[#196](https://github.com/VadimDez/create-backend-app/pull/196)] - Security upgrade nodemon from 2.0.17 to 2.0.19
+- [[#198](https://github.com/VadimDez/create-backend-app/issues/198)] - Remove test for private route when using no AppID
+- [[#200](https://github.com/VadimDez/create-backend-app/pull/200)] - Remove test for private route when using no AppID
 
 ## [1.0.2] - 20-03-2022
 
