@@ -13,9 +13,11 @@ npx create-backend-app
 ## Supports
 
 - [Express](https://expressjs.com/)
-- Swagger, Swagger UI and Swagger Request Validation
-- Nodemon
-- Jest
+- [Swagger](https://swagger.io)
+- [Swagger UI](https://swagger.io/tools/swagger-ui/)
+- Swagger Request Validation
+- [Nodemon](https://nodemon.io)
+- [Jest](https://jestjs.io)
 - [IBM AppID](https://www.ibm.com/cloud/app-id)
 - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 
