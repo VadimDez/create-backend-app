@@ -25,9 +25,9 @@
   "dependencies": {
     "colors": "^1.4.0",
     "ejs": "^3.1.8",
-    "inquirer": "~8.2.4",
+    "inquirer": "~8.2.5",
     "shelljs": "^0.8.5",
-    "snyk": "^1.984.0"
+    "snyk": "^1.1064.0"
   },
   "engines": {
     "node": ">= 14"
